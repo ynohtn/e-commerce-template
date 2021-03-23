@@ -1,0 +1,17 @@
+@import 'config.scss';
+
+.Page {
+  width: 100%;
+}
+
+.layout {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+}
