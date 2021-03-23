@@ -3,6 +3,8 @@ import classNames from "classnames/bind";
 import { ProductType } from "~/data";
 import css from "./styles.module.scss";
 import Product from "~/components/Product";
+import CartContext, { ProductInCart } from "~/contexts/cartContext";
+import { ActionType } from "~/reducers/cartReducer";
 const cx = classNames.bind(css);
 
 export interface ProductGridProps {
@@ -11,6 +13,17 @@ export interface ProductGridProps {
 }
 
 const ProductGrid: FC<ProductGridProps> = ({ className, products }) => {
+  const { dispatchProducts } = useContext(CartContext);
+
+  // Add product to cart
+  const addToCart = (product: ProductType | ProductInCart) => {
+    dispatchProducts({
+      type: ActionType.ADD_TO_CART,
+      payload: {
+        product
+      }
+    });
+  };
 
   return (
     <div className={cx(className, css.ProductGrid)}>
@@ -27,6 +40,7 @@ const ProductGrid: FC<ProductGridProps> = ({ className, products }) => {
             >
               <button
                 className={cx(className, css.button)}
+                onClick={() => addToCart(product)}
               >
                 Add to cart
               </button>
