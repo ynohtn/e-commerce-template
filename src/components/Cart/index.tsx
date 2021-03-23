@@ -5,6 +5,7 @@ import { ProductType } from "~/data";
 import { ActionType } from "~/reducers/cartReducer";
 import css from "./styles.module.scss";
 import Product from "~/components/Product";
+import TotalPrice from "./TotalPrice";
 const cx = classNames.bind(css);
 
 export interface CartProps {
@@ -37,6 +38,7 @@ const Cart: FC<CartProps> = ({ className }) => {
           </Product>
         ))}
       </ul>
+      <TotalPrice />
     </div>
   );
 };
