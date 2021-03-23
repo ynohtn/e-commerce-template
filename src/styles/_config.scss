@@ -1,0 +1,26 @@
+/** COLORS **/
+$black: #000000;
+$white: #ffffff;
+
+/** FONTS **/
+$regulat: normal;
+$semiBold: 600;
+$bold: 700;
+
+$fontSizes: (
+  12: 12px,
+);
+
+/** BREAKPOINTS **/
+$xs: 350;
+$sm: 640;
+$md: 768;
+$lg: 1024;
+$xl: 1280;
+
+/** MIXINS **/
+@mixin from($value) {
+  @media (min-width: $value + 'px') {
+    @content;
+  }
+}
