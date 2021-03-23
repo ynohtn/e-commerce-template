@@ -1,5 +1,6 @@
 import Head from 'next/head'
-
+import ProductGrid from '~/components/ProductGrid'
+import { products } from '~/data'
 export default function Home() {
-  return <div>hello</div>
+  return <ProductGrid products={products} />
 }

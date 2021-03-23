@@ -1,6 +1,6 @@
 module.exports = {
   sassOptions: {
-    includePaths: ['src'],
+    includePaths: ['src/styles'],
   },
   images: {
     domains: ['localhost'],
