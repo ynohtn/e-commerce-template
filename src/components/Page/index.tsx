@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import classNames from "classnames/bind";
 import css from "./styles.module.scss";
 import { useRouter } from "next/router";

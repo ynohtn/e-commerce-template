@@ -2,15 +2,16 @@ import { FC } from "react";
 import classNames from "classnames/bind";
 import { ProductType } from "~/data";
 import css from "./styles.module.scss";
+import AddToCartButton from "./AddToCartButton";
 const cx = classNames.bind(css);
 
-export interface ProductProps {
-  className?: string;
-  product: ProductType;
-  // Typer children sans le type de react
-  // children?: JSX.Element | JSX.Element[];
+export interface ProductCardProps {
+  className?: string
+  product: ProductType
+  fromProductGrid?: boolean
 }
-const Product: FC<ProductProps> = ({ className, product, children }) => {
+
+const ProductCard: FC<ProductCardProps> = ({ className, product }) => {
   return (
     <li className={cx(className, css.Product)}>
       <figure>
@@ -19,13 +20,13 @@ const Product: FC<ProductProps> = ({ className, product, children }) => {
       <div>
         <h2>{product.name}</h2>
         <h3>{product.price} €</h3>
-        {children}
+        <AddToCartButton product={product} />
       </div>
     </li>
   );
 };
 
-Product.defaultProps = {};
+ProductCard.defaultProps = {};
 
-export default Product;
+export default ProductCard;
 
