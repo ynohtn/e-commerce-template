@@ -1,4 +1,4 @@
-import React from 'react'
+import { createContext } from 'react'
 import { ProductType } from '~/data'
 
 export interface CartContent {
@@ -10,7 +10,7 @@ export interface ProductInCart extends ProductType {
   quantity: number
 }
 
-const CartContext = React.createContext<CartContent>({
+const CartContext = createContext<CartContent>({
   products: [],
   dispatchProducts: () => {},
 })

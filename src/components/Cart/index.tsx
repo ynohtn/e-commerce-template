@@ -1,4 +1,4 @@
-import React, { FC, useContext } from "react";
+import { FC, useContext } from "react";
 import classNames from "classnames/bind";
 import CartContext, { ProductInCart } from "~/contexts/cartContext";
 import { ProductType } from "~/data";
@@ -6,7 +6,6 @@ import { ActionType } from "~/reducers/cartReducer";
 import css from "./styles.module.scss";
 import Product from "~/components/Product";
 import TotalPrice from "./TotalPrice";
-import QuantityManager from "./QuantityManager";
 const cx = classNames.bind(css);
 
 export interface CartProps {
@@ -22,10 +21,8 @@ interface DispatchActionsParams {
 }
 
 const Cart: FC<CartProps> = ({ className }) => {
-  // Consume context
   const { products, dispatchProducts } = useContext(CartContext);
 
-  // Returns total quantity of items in cart
   const itemsInCart = () => {
     return products.reduce(
       (quantity: number, product) => quantity + product.quantity,
@@ -70,12 +67,7 @@ const Cart: FC<CartProps> = ({ className }) => {
             className={cx(className, css.product)}
             key={`cartItem-${index}`}
             product={product}
-          >
-            <QuantityManager
-              quantity={product.quantity}
-              onClick={(action) => dispatchActions({ action, product })}
-            />
-          </Product>
+          />
         ))}
       </ul>
       <TotalPrice />
