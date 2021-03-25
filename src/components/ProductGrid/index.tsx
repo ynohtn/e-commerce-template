@@ -1,10 +1,8 @@
-import { FC, useContext } from "react";
+import { FC } from "react";
 import classNames from "classnames/bind";
 import { ProductType } from "~/data";
 import css from "./styles.module.scss";
-import Product from "~/components/Product";
-import CartContext, { ProductInCart } from "~/contexts/cartContext";
-import { ActionType } from "~/reducers/cartReducer";
+import ProductCard from "~/components/ProductGrid/ProductCard";
 const cx = classNames.bind(css);
 
 export interface ProductGridProps {
@@ -21,11 +19,10 @@ const ProductGrid: FC<ProductGridProps> = ({ className, products }) => {
       <div>
         <ul>
           {products.map((product) => (
-            <Product
+            <ProductCard
               className={cx(className, css.product)}
               key={product.id}
               product={product}
-              fromProductGrid={true}
             />
           ))}
         </ul>
