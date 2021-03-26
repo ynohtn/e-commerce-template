@@ -66,11 +66,11 @@ const QuantityManager: FC<QuantityManagerProps> = ({ className, product }) => {
         </button>
       </div>
       <button
-        className={cx(className, css.button)}
+        className={cx(className, css.button, css.remove)}
         onClick={() =>
           dispatchActions({ action: ActionType.REMOVE_FROM_CART, product })
         }>
-        X
+        Remove
       </button>
     </div>
   );

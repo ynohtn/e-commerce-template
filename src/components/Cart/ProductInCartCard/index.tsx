@@ -22,12 +22,14 @@ const ProductInCartCard: FC<ProductInCartCardProps> = ({
 
   return (
     <li className={cx(className, css.ProductInCartCard)}>
-      <figure>
+      <figure className={css.miniature}>
         <img src={product.image} alt="" />
       </figure>
-      <div>
-        <h2>{product.name}</h2>
-        <h3>{displayProductTotalPrice(product.price, product.quantity)}</h3>
+      <div className={css.content}>
+        <div>
+          <h2>{product.name}</h2>
+          <h3>{displayProductTotalPrice(product.price, product.quantity)}</h3>
+        </div>
         <QuantityManager product={product} />
       </div>
     </li>

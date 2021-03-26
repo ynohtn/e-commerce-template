@@ -1,9 +1,10 @@
-import { FC, useContext } from 'react';
+import { FC, useContext, useRef } from 'react';
 import classNames from 'classnames/bind';
 import CartContext from '~/contexts/cartContext';
+import { ActionType } from '~/reducers/cartReducer';
+import { useClickAway } from 'react-use';
 import css from './styles.module.scss';
 import ProductInCartCard from '~/components/Cart/ProductInCartCard';
-import TotalPrice from './TotalPrice';
 import CartHeader from './CartHeader';
 import CartFooter from './CartFooter';
 const cx = classNames.bind(css);
@@ -13,10 +14,15 @@ export interface CartProps {
 }
 
 const Cart: FC<CartProps> = ({ className }) => {
-  const { isOpen, products } = useContext(CartContext);
+  const { isOpen, products, dispatchProducts } = useContext(CartContext);
+  const ref = useRef(null);
+
+  useClickAway(ref, () => {
+    if (isOpen) dispatchProducts({ type: ActionType.TOGGLE_CART, isOpen })
+  });
 
   return (
-    <div className={cx(className, css.Cart, { isOpen })}>
+    <div ref={ref} className={cx(className, css.Cart, { isOpen })}>
       <CartHeader />
       {products.length > 0 ? (
         <ul className={css.cartContent}>

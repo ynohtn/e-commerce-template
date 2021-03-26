@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-top: 28px;
 
   div {
     display: flex;
@@ -28,5 +29,10 @@
     cursor: pointer;
     width: 20px;
     height: 20px;
+  }
+
+  .remove {
+    width: 30%;
+    background: red;
   }
 }
