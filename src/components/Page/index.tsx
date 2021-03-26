@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import Cart from '~/components/Cart';
 import CartToggler from '../CartToggler';
 import CartContext from '~/contexts/cartContext';
+import Header from '../Header';
 const cx = classNames.bind(css);
 
 export interface PageProps {
@@ -19,10 +20,10 @@ function Page({ className, children }: PageProps) {
     <div className={cx(className, css.Page)}>
       <div className={cx(className, css.layout)}>
         <div key={asPath} className={cx(className, css.container, { isOpen })}>
+          <Header />
           {children}
         </div>
         <Cart />
-        <CartToggler />
       </div>
     </div>
   );
