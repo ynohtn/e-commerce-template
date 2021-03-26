@@ -21,8 +21,9 @@ function TotalPrice({ className }: TotalPriceProps) {
   };
 
   return (
-    <div className={cx(className, css.Total)}>
-      TOTAL: {formatPrice(calculatePrice())}
+    <div className={cx(className, css.TotalPrice)}>
+      <p>Subtotal:</p>
+      <p>{formatPrice(calculatePrice())}</p>
     </div>
   );
 }

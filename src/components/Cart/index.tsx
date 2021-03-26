@@ -5,6 +5,7 @@ import css from "./styles.module.scss";
 import ProductInCartCard from "~/components/Cart/ProductInCartCard";
 import TotalPrice from "./TotalPrice";
 import CartHeader from "./CartHeader";
+import CartFooter from "./CartFooter";
 const cx = classNames.bind(css);
 
 export interface CartProps {
@@ -33,9 +34,7 @@ const Cart: FC<CartProps> = ({ className }) => {
             <p>Cart is empty.</p>
           </div>
       }
-      <div>
-        <TotalPrice />
-      </div>
+      <CartFooter />
     </div>
   );
 };

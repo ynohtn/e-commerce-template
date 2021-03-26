@@ -1,4 +1,7 @@
 @import 'config.scss';
 
-.BaseComponent {
+.TotalPrice {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 8px 0;
 }
