@@ -3,9 +3,7 @@
 .Cart {
   position: absolute;
   bottom: 0;
-  right: 0;
-  // left:0;
-  // right: calc(-50% - 8px);
+  right: calc(-50% - 8px);
   z-index: 1;
   padding: 8px;
   height: 100%;
@@ -13,6 +11,7 @@
   background: white;
   color: black;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  transition: right 1s ease;
 
   .title {
     margin: 0 0 8px 0;
@@ -56,4 +55,8 @@
       margin-bottom: 8px;
     }
   }
+}
+
+.isOpen {
+  right: 0;
 }
