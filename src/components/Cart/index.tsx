@@ -11,7 +11,7 @@ export interface CartProps {
 }
 
 const Cart: FC<CartProps> = ({ className }) => {
-  const { products } = useContext(CartContext);
+  const { isOpen, products } = useContext(CartContext);
 
   const itemsInCart = () => {
     return products.reduce(
@@ -21,7 +21,7 @@ const Cart: FC<CartProps> = ({ className }) => {
   };
 
   return (
-    <div className={cx(className, css.Cart)}>
+    <div className={cx(className, css.Cart, { isOpen })}>
       <h1 className={cx(className, css.title)}>CART ({itemsInCart()})</h1>
       <ul>
         {products.map((product, index: number) => (

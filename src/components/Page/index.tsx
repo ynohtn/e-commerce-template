@@ -1,8 +1,9 @@
-import { ReactNode } from "react";
+import { memo, ReactNode } from "react";
 import classNames from "classnames/bind";
 import css from "./styles.module.scss";
 import { useRouter } from "next/router";
 import Cart from "~/components/Cart";
+import CartToggler from "../CartToggler";
 const cx = classNames.bind(css);
 
 export interface PageProps {
@@ -19,6 +20,7 @@ function Page({ className, children }: PageProps) {
           {children}
         </div>
         <Cart />
+        <CartToggler />
       </div>
     </div>
   );
@@ -26,4 +28,4 @@ function Page({ className, children }: PageProps) {
 
 Page.defaultProps = {} as PageProps;
 
-export default Page;
+export default memo(Page);
