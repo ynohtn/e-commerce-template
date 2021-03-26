@@ -1,8 +1,8 @@
-import { FC, useContext } from "react";
-import classNames from "classnames/bind";
-import { ActionType } from "~/reducers/cartReducer";
-import css from "./styles.module.scss";
-import CartContext, { ProductInCart } from "~/contexts/cartContext";
+import { FC, useContext } from 'react';
+import classNames from 'classnames/bind';
+import { ActionType } from '~/reducers/cartReducer';
+import css from './styles.module.scss';
+import CartContext, { ProductInCart } from '~/contexts/cartContext';
 const cx = classNames.bind(css);
 
 export interface QuantityManagerProps {
@@ -11,15 +11,12 @@ export interface QuantityManagerProps {
 }
 
 interface DispatchActionsParams {
-  action: ActionType
-  product: ProductInCart
+  action: ActionType;
+  product: ProductInCart;
 }
 
-const QuantityManager: FC<QuantityManagerProps> = ({
-  className,
-  product,
-}) => {
-  const { dispatchProducts } = useContext(CartContext)
+const QuantityManager: FC<QuantityManagerProps> = ({ className, product }) => {
+  const { dispatchProducts } = useContext(CartContext);
 
   const dispatchActions = ({ action, product }: DispatchActionsParams) => {
     switch (action) {
@@ -27,49 +24,52 @@ const QuantityManager: FC<QuantityManagerProps> = ({
         return dispatchProducts({
           type: ActionType.ADD_TO_CART,
           payload: {
-            product,
-          },
-        })
+            product
+          }
+        });
       case ActionType.DECREMENT_QTY:
         return dispatchProducts({
           type: ActionType.DECREMENT_QTY,
           payload: {
-            product,
-          },
-        })
+            product
+          }
+        });
       case ActionType.REMOVE_FROM_CART:
         return dispatchProducts({
           type: ActionType.REMOVE_FROM_CART,
           payload: {
-            product,
-          },
-        })
+            product
+          }
+        });
       default:
-        return null
+        return null;
     }
-  }
+  };
 
   return (
     <div className={cx(className, css.QuantityManager)}>
       <div>
         <button
           className={cx(className, css.button)}
-          onClick={() => dispatchActions({ action: ActionType.DECREMENT_QTY, product })}
-        >
+          onClick={() =>
+            dispatchActions({ action: ActionType.DECREMENT_QTY, product })
+          }>
           -
         </button>
         <p className={cx(className, css.quantity)}>{product.quantity}</p>
         <button
           className={cx(className, css.button)}
-          onClick={() => dispatchActions({ action: ActionType.ADD_TO_CART, product })}
-        >
+          onClick={() =>
+            dispatchActions({ action: ActionType.ADD_TO_CART, product })
+          }>
           +
         </button>
       </div>
       <button
         className={cx(className, css.button)}
-        onClick={() => dispatchActions({ action: ActionType.REMOVE_FROM_CART, product })}
-      >
+        onClick={() =>
+          dispatchActions({ action: ActionType.REMOVE_FROM_CART, product })
+        }>
         X
       </button>
     </div>

@@ -1,6 +1,6 @@
-import { FC, ReactNode, useReducer } from "react";
-import CartContext from "~/contexts/cartContext";
-import cartReducer from "~/reducers/cartReducer";
+import { FC, ReactNode, useReducer } from 'react';
+import CartContext from '~/contexts/cartContext';
+import cartReducer from '~/reducers/cartReducer';
 
 const CartProvider: FC<ReactNode> = ({ children }) => {
   const [products, dispatchProducts] = useReducer(cartReducer, {

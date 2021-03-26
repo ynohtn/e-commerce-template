@@ -1,13 +1,13 @@
-import { useContext } from 'react'
-import classNames from 'classnames/bind'
-import css from './styles.module.scss'
-import CartContext from '~/contexts/cartContext'
-import { ActionType } from '~/reducers/cartReducer'
+import { useContext } from 'react';
+import classNames from 'classnames/bind';
+import css from './styles.module.scss';
+import CartContext from '~/contexts/cartContext';
+import { ActionType } from '~/reducers/cartReducer';
 
-const cx = classNames.bind(css)
+const cx = classNames.bind(css);
 
 export interface CartHeaderProps {
-  className?: string
+  className?: string;
 }
 
 function CartHeader({ className }: CartHeaderProps) {
@@ -23,14 +23,15 @@ function CartHeader({ className }: CartHeaderProps) {
       <h1 className={cx(className, css.title)}>CART ({itemsInCart()})</h1>
       <button
         className={cx(className, css.CartToggler)}
-        onClick={() => dispatchProducts({ isOpen, type: ActionType.TOGGLE_CART })}
-      >
+        onClick={() =>
+          dispatchProducts({ isOpen, type: ActionType.TOGGLE_CART })
+        }>
         Close
       </button>
     </div>
-  )
+  );
 }
 
-CartHeader.defaultProps = {}
+CartHeader.defaultProps = {};
 
-export default CartHeader
+export default CartHeader;

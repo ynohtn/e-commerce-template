@@ -1,6 +1,6 @@
-import '~/styles/globals.scss'
-import CartProvider from '~/components/CartProvider'
-import Page from '~/components/Page'
+import '~/styles/globals.scss';
+import CartProvider from '~/components/CartProvider';
+import Page from '~/components/Page';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </Page>
     </CartProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

@@ -1,20 +1,20 @@
-import { createContext } from 'react'
-import { ProductType } from '~/data'
+import { createContext } from 'react';
+import { ProductType } from '~/data';
 
 export interface CartContent {
-  products: ProductInCart[]
-  dispatchProducts?: any
-  isOpen?: boolean
+  products: ProductInCart[];
+  dispatchProducts?: any;
+  isOpen?: boolean;
 }
 
 export interface ProductInCart extends ProductType {
-  quantity: number
+  quantity: number;
 }
 
 const CartContext = createContext<CartContent>({
   products: [],
   isOpen: false,
-  dispatchProducts: () => {},
-})
+  dispatchProducts: () => {}
+});
 
-export default CartContext
+export default CartContext;

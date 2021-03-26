@@ -1,14 +1,14 @@
-import { FC } from "react";
-import classNames from "classnames/bind";
-import { ProductType } from "~/data";
-import css from "./styles.module.scss";
-import AddToCartButton from "./AddToCartButton";
+import { FC } from 'react';
+import classNames from 'classnames/bind';
+import { ProductType } from '~/data';
+import css from './styles.module.scss';
+import AddToCartButton from './AddToCartButton';
 const cx = classNames.bind(css);
 
 export interface ProductCardProps {
-  className?: string
-  product: ProductType
-  fromProductGrid?: boolean
+  className?: string;
+  product: ProductType;
+  fromProductGrid?: boolean;
 }
 
 const ProductCard: FC<ProductCardProps> = ({ className, product }) => {
@@ -29,4 +29,3 @@ const ProductCard: FC<ProductCardProps> = ({ className, product }) => {
 ProductCard.defaultProps = {};
 
 export default ProductCard;
-
