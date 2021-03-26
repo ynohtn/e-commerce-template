@@ -1,4 +1,4 @@
-import { FC, useContext, useMemo } from "react";
+import { FC, useContext } from "react";
 import classNames from "classnames/bind";
 import { ActionType } from "~/reducers/cartReducer";
 import css from "./styles.module.scss";

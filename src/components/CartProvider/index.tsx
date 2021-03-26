@@ -4,7 +4,8 @@ import cartReducer from "~/reducers/cartReducer";
 
 const CartProvider: FC<ReactNode> = ({ children }) => {
   const [products, dispatchProducts] = useReducer(cartReducer, {
-    products: []
+    products: [],
+    isOpen: false
   });
 
   const providerValue = {

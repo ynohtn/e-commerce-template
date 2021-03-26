@@ -75,3 +75,10 @@ export const removeOneProduct = (state: CartContent, action: IReducer) => {
     })
   else return removeProduct(state, action)
 }
+
+export const toggleCart = (state: CartContent) => {
+  return {
+    ...state,
+    isOpen: !state.isOpen,
+  }
+}

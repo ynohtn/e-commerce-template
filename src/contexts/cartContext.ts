@@ -4,6 +4,7 @@ import { ProductType } from '~/data'
 export interface CartContent {
   products: ProductInCart[]
   dispatchProducts?: any
+  isOpen?: boolean
 }
 
 export interface ProductInCart extends ProductType {
@@ -12,6 +13,7 @@ export interface ProductInCart extends ProductType {
 
 const CartContext = createContext<CartContent>({
   products: [],
+  isOpen: false,
   dispatchProducts: () => {},
 })
 

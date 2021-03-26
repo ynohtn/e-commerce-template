@@ -1,0 +1,32 @@
+import { memo, useContext } from 'react'
+import classNames from 'classnames/bind'
+import css from './styles.module.scss'
+import CartContext from '~/contexts/cartContext';
+import { ActionType } from '~/reducers/cartReducer';
+
+const cx = classNames.bind(css)
+
+export interface CartTogglerProps {
+  className?: string
+}
+
+function CartToggler({ className }: CartTogglerProps) {
+  const { isOpen, dispatchProducts } = useContext(CartContext);
+
+  const toggleCart = () => {
+    dispatchProducts({ isOpen, type: ActionType.TOGGLE_CART })
+  }
+
+  return (
+    <button
+      className={cx(className, css.CartToggler)}
+      onClick={() => toggleCart()}
+    >
+      Open Cart
+    </button>
+  )
+}
+
+CartToggler.defaultProps = {}
+
+export default memo(CartToggler)
