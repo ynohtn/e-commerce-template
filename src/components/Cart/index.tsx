@@ -17,15 +17,22 @@ const Cart: FC<CartProps> = ({ className }) => {
   return (
     <div className={cx(className, css.Cart, { isOpen })}>
       <CartHeader />
-      <ul className={css.cartContent}>
-        {products.map((product, index: number) => (
-          <ProductInCartCard
-            className={cx(className, css.product)}
-            key={`cart-${product.id}`}
-            product={product}
-          />
-        ))}
-      </ul>
+      {
+        products.length > 0 ?
+          <ul className={css.cartContent}>
+            {products.map((product) => (
+              <ProductInCartCard
+                className={cx(className, css.product)}
+                key={`cart-${product.id}`}
+                product={product}
+              />
+            ))}
+          </ul>
+          :
+          <div className={css.isEmpty}>
+            <p>Cart is empty.</p>
+          </div>
+      }
       <div>
         <TotalPrice />
       </div>

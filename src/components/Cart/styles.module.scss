@@ -25,6 +25,13 @@
     overflow-y: auto;
     height: calc(100% - 68px);
   }
+
+  .isEmpty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 124px);
+  }
 }
 
 .isOpen {
