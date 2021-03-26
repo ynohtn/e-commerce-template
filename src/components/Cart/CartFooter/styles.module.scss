@@ -1,0 +1,18 @@
+@import 'config.scss';
+
+.CartFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  border-top: 1px solid black;
+
+  button {
+    background: #0e0e0e;
+    color: #fefefe;
+    border: 0;
+    padding: 16px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+}

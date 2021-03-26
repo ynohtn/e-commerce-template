@@ -14,4 +14,10 @@
 
 .container {
   width: 100%;
+  transition: all 0.5s ease;
+}
+
+.isOpen {
+  filter: blur(10px);
+  pointer-events: none;
 }

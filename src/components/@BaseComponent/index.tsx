@@ -1,17 +1,17 @@
-import React from 'react'
-import classNames from 'classnames/bind'
-import css from './styles.module.scss'
+import React from 'react';
+import classNames from 'classnames/bind';
+import css from './styles.module.scss';
 
-const cx = classNames.bind(css)
+const cx = classNames.bind(css);
 
 export interface BaseComponentProps {
-  className?: string
+  className?: string;
 }
 
 function BaseComponent({ className }: BaseComponentProps) {
-  return <div className={cx(className, css.BaseComponent)}></div>
+  return <div className={cx(className, css.BaseComponent)}></div>;
 }
 
-BaseComponent.defaultProps = {}
+BaseComponent.defaultProps = {};
 
-export default BaseComponent
+export default BaseComponent;

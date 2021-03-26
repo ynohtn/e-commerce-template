@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import classNames from "classnames/bind";
-import CartContext from "~/contexts/cartContext";
-import { formatPrice } from "~/utils";
-import css from "./styles.module.scss";
+import { useContext } from 'react';
+import classNames from 'classnames/bind';
+import CartContext from '~/contexts/cartContext';
+import { formatPrice } from '~/utils';
+import css from './styles.module.scss';
 
 const cx = classNames.bind(css);
 
@@ -21,8 +21,9 @@ function TotalPrice({ className }: TotalPriceProps) {
   };
 
   return (
-    <div className={cx(className, css.Total)}>
-      TOTAL: {formatPrice(calculatePrice())}
+    <div className={cx(className, css.TotalPrice)}>
+      <p>Subtotal:</p>
+      <p>{formatPrice(calculatePrice())}</p>
     </div>
   );
 }

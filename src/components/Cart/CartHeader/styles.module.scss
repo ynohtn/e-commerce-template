@@ -1,0 +1,17 @@
+@import 'config.scss';
+
+.CartHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid black;
+
+  button {
+    background: #0e0e0e;
+    color: #fefefe;
+    border: 0;
+    padding: 4px 8px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+}
