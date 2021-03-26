@@ -13,16 +13,12 @@ export interface CartTogglerProps {
 function CartToggler({ className }: CartTogglerProps) {
   const { isOpen, dispatchProducts } = useContext(CartContext);
 
-  const toggleCart = () => {
-    dispatchProducts({ isOpen, type: ActionType.TOGGLE_CART })
-  }
-
   return (
     <button
       className={cx(className, css.CartToggler)}
-      onClick={() => toggleCart()}
+      onClick={() => dispatchProducts({ isOpen, type: ActionType.TOGGLE_CART })}
     >
-      Open Cart
+      {isOpen ? "Close" : "Open Cart"}
     </button>
   )
 }

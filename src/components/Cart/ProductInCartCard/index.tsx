@@ -18,7 +18,7 @@ const ProductInCartCard: FC<ProductInCartCardProps> = ({ className, product }) =
   }
 
   return (
-    <li className={cx(className, css.Product)}>
+    <li className={cx(className, css.ProductInCartCard)}>
       <figure>
         <img src={product.image} alt="" />
       </figure>

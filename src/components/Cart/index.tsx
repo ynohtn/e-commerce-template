@@ -4,6 +4,7 @@ import CartContext from "~/contexts/cartContext";
 import css from "./styles.module.scss";
 import ProductInCartCard from "~/components/Cart/ProductInCartCard";
 import TotalPrice from "./TotalPrice";
+import CartHeader from "./CartHeader";
 const cx = classNames.bind(css);
 
 export interface CartProps {
@@ -13,26 +14,21 @@ export interface CartProps {
 const Cart: FC<CartProps> = ({ className }) => {
   const { isOpen, products } = useContext(CartContext);
 
-  const itemsInCart = () => {
-    return products.reduce(
-      (quantity: number, product) => quantity + product.quantity,
-      0
-    );
-  };
-
   return (
     <div className={cx(className, css.Cart, { isOpen })}>
-      <h1 className={cx(className, css.title)}>CART ({itemsInCart()})</h1>
-      <ul>
+      <CartHeader />
+      <ul className={css.cartContent}>
         {products.map((product, index: number) => (
           <ProductInCartCard
             className={cx(className, css.product)}
-            key={`cartItem-${index}`}
+            key={`cart-${product.id}`}
             product={product}
           />
         ))}
       </ul>
-      <TotalPrice />
+      <div>
+        <TotalPrice />
+      </div>
     </div>
   );
 };
