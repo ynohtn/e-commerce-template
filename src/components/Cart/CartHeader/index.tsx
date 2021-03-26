@@ -2,7 +2,8 @@ import { useContext } from 'react';
 import classNames from 'classnames/bind';
 import css from './styles.module.scss';
 import CartContext from '~/contexts/cartContext';
-import { ActionType } from '~/reducers/cartReducer';
+import { itemsInCart } from '~/utils';
+import CartToggler from '~/components/CartToggler';
 
 const cx = classNames.bind(css);
 
@@ -11,23 +12,12 @@ export interface CartHeaderProps {
 }
 
 function CartHeader({ className }: CartHeaderProps) {
-  const { isOpen, products, dispatchProducts } = useContext(CartContext);
-  const itemsInCart = () => {
-    return products.reduce(
-      (quantity: number, product) => quantity + product.quantity,
-      0
-    );
-  };
+  const { products } = useContext(CartContext);
+
   return (
     <div className={cx(className, css.CartHeader)}>
-      <h1 className={cx(className, css.title)}>CART ({itemsInCart()})</h1>
-      <button
-        className={cx(className, css.CartToggler)}
-        onClick={() =>
-          dispatchProducts({ isOpen, type: ActionType.TOGGLE_CART })
-        }>
-        Close
-      </button>
+      <h1 className={cx(className, css.title)}>CART ({itemsInCart(products)})</h1>
+      <CartToggler />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import css from './styles.module.scss';
 import CartContext from '~/contexts/cartContext';
 import { ActionType } from '~/reducers/cartReducer';
+import { itemsInCart } from '~/utils';
 
 const cx = classNames.bind(css);
 
@@ -11,7 +12,7 @@ export interface CartTogglerProps {
 }
 
 function CartToggler({ className }: CartTogglerProps) {
-  const { isOpen, dispatchProducts } = useContext(CartContext);
+  const { isOpen, products, dispatchProducts } = useContext(CartContext);
 
   return (
     <button
@@ -19,7 +20,7 @@ function CartToggler({ className }: CartTogglerProps) {
       onClick={() =>
         dispatchProducts({ isOpen, type: ActionType.TOGGLE_CART })
       }>
-      {isOpen ? 'Close' : 'Open Cart'}
+      {isOpen ? 'Close' : `Cart ( ${itemsInCart(products)} )`}
     </button>
   );
 }

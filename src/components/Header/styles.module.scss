@@ -1,0 +1,47 @@
+@import 'config.scss';
+
+.Header {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  height: 100px;
+
+  .navLeft {
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+      padding: 16px;
+
+      li {
+        margin: 0 16px;
+      }
+    }
+  }
+
+  .logo {
+    max-width: 250px;
+    height: 80px;
+    justify-self: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .navRight {
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      padding: 16px;
+
+      li {
+        margin: 0 16px;
+      }
+    }
+  }
+}
