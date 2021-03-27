@@ -13,11 +13,11 @@ export interface ProductCardProps {
 
 const ProductCard: FC<ProductCardProps> = ({ className, product }) => {
   return (
-    <li className={cx(className, css.Product)}>
-      <figure>
+    <li className={cx(className, css.ProductCard)}>
+      <figure className={css.image}>
         <img src={product.image} alt="" />
       </figure>
-      <div>
+      <div className={css.footer}>
         <h2>{product.name}</h2>
         <h3>{product.price} €</h3>
         <AddToCartButton product={product} />

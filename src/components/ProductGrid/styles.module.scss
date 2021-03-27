@@ -16,7 +16,7 @@
       display: grid;
       gap: 8px;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(auto-fit, minmax(100px, 364px));
+      grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
     }
   }
 }
