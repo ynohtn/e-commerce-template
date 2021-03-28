@@ -1,10 +1,13 @@
 @import 'config.scss';
 
 .AddToCartButton {
-  background: #0e0e0e;
-  color: #fefefe;
+  background: black;
+  color: white;
   border: 0;
   padding: 8px;
   border-radius: 2px;
   cursor: pointer;
+  width: 40%;
+  height: 48px;
+  font-size: 24px;
 }
