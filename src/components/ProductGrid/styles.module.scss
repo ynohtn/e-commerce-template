@@ -15,8 +15,16 @@
     ul {
       display: grid;
       gap: 8px;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fill, 1fr);
       grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+
+      @include from($sm) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include from($md) {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   }
 }
