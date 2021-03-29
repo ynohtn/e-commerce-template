@@ -13,7 +13,11 @@ export interface AddToCartButtonProps {
 }
 
 function AddToCartButton({ className, product }: AddToCartButtonProps) {
-  const { dispatchProducts } = useContext(CartContext);
+  const { products, dispatchProducts } = useContext(CartContext);
+
+  const isInCart = (product: ProductType) => {
+    return !!products.find(item => item.id === product.id);
+  }
 
   const addToCart = (product: ProductType) => {
     dispatchProducts({
@@ -27,8 +31,9 @@ function AddToCartButton({ className, product }: AddToCartButtonProps) {
   return (
     <button
       className={cx(className, css.AddToCartButton)}
-      onClick={() => addToCart(product)}>
-      Add to cart
+      onClick={() => { addToCart(product) }}
+    >
+      {isInCart(product) ? 'Add more' : 'Add to cart'}
     </button>
   );
 }
