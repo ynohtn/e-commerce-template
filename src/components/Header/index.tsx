@@ -1,6 +1,8 @@
 import classNames from 'classnames/bind';
+import { nav, DropdownType } from '~/data'
 import css from './styles.module.scss';
 import CartToggler from '../CartToggler';
+import Dropdown from './Dropdown';
 
 const cx = classNames.bind(css);
 
@@ -8,15 +10,14 @@ export interface HeaderProps {
   className?: string;
 }
 
-const logo: string = 'https://upload.wikimedia.org/wikipedia/fr/thumb/8/8e/Swoosh.svg/1200px-Swoosh.svg.png'
+const logo: string = '/logo.png'
 
 function Header({ className }: HeaderProps) {
   return (
     <header className={cx(className, css.Header)}>
       <nav className={cx(className, css.navLeft)}>
         <ul>
-          <li>Shop</li>
-          <li>Info</li>
+          {nav.map((dropdown: DropdownType) => <Dropdown key={dropdown.text} dropdown={dropdown} />)}
         </ul>
       </nav>
       <figure className={css.logo}>

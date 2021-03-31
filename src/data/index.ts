@@ -72,3 +72,32 @@ export const products = [
       'https://images.asos-media.com/products/asos-design-chaussettes-hauteur-mollet-avec-broderie-champignon-rose/21938917-1-pink?$XXL$&wid=513&fit=constrain'
   }
 ];
+
+export interface DropdownType {
+  text: string;
+  dropdown: DropdownItemType[];
+}
+
+export interface DropdownItemType {
+  text: string;
+  href: string;
+}
+
+export const nav = [
+  {
+    text: 'Shop',
+    dropdown: [
+      { text: 'Everything', href: '/shop' },
+      { text: 'Hoodies', href: '/shop/hoodies' },
+      { text: 'Socks', href: '/shop/socks' },
+      { text: 'T-shirts', href: '/shop/t-shirts' }
+    ]
+  },
+  {
+    text: 'Info',
+    dropdown: [
+      { text: 'Our Story', href: '/about' },
+      { text: 'FAQ', href: '/faq' }
+    ]
+  }
+];
