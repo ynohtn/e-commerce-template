@@ -38,7 +38,8 @@ button {
 }
 
 .home {
-  height: calc(100vh - 100px);
+  padding-top: 115px;
+  height: inherit;
   overflow: auto;
 }
 

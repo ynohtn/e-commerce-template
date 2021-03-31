@@ -21,7 +21,7 @@ function Header({ className }: HeaderProps) {
         </ul>
       </nav>
       <figure className={css.logo}>
-        <img src={logo} alt="" />
+        <img src={logo} alt="TODO" />
       </figure>
       <nav className={css.navRight}>
         <ul>
