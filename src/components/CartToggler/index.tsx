@@ -13,6 +13,7 @@ export interface CartTogglerProps {
 
 function CartToggler({ className }: CartTogglerProps) {
   const { isOpen, products, dispatchProducts } = useContext(CartContext);
+  const productsAdded = itemsInCart(products);
 
   return (
     <button
@@ -20,7 +21,16 @@ function CartToggler({ className }: CartTogglerProps) {
       onClick={() =>
         dispatchProducts({ isOpen, type: ActionType.TOGGLE_CART })
       }>
-      {isOpen ? 'Close' : `Cart ( ${itemsInCart(products)} )`}
+      {isOpen ?
+        'Close'
+        :
+        <div>
+          <span>Cart</span>
+          {productsAdded > 0 &&
+            <span className={css.notification}>{productsAdded}</span>
+          }
+        </div>
+      }
     </button>
   );
 }
