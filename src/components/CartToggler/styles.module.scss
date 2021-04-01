@@ -1,10 +1,25 @@
 @import 'config.scss';
 
 .CartToggler {
+  position: relative;
   background: #0e0e0e;
   color: #fefefe;
   border: 0;
-  padding: 4px 8px;
+  padding: 8px 16px;
   border-radius: 2px;
   cursor: pointer;
+
+  .notification {
+    position: absolute;
+    top: -12px;
+    right: -14px;
+    padding: 8px;
+    background: red;
+    border-radius: 22px;
+    font-weight: bold;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
