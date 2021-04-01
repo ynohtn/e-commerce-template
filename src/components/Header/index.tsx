@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import css from './styles.module.scss';
 import CartToggler from '../CartToggler';
+import Nav from './Nav'
 
 const cx = classNames.bind(css);
 
@@ -8,23 +9,17 @@ export interface HeaderProps {
   className?: string;
 }
 
-const logo: string = 'https://upload.wikimedia.org/wikipedia/fr/thumb/8/8e/Swoosh.svg/1200px-Swoosh.svg.png'
+const logo: string = '/logo.png'
 
 function Header({ className }: HeaderProps) {
   return (
     <header className={cx(className, css.Header)}>
-      <nav className={cx(className, css.navLeft)}>
-        <ul>
-          <li>Shop</li>
-          <li>Info</li>
-        </ul>
-      </nav>
+      <Nav />
       <figure className={css.logo}>
-        <img src={logo} alt="" />
+        <img src={logo} alt="TODO" />
       </figure>
       <nav className={css.navRight}>
         <ul>
-          <li>Account</li>
           <li>
             <CartToggler />
           </li>

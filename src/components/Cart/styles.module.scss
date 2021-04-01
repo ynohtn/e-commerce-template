@@ -3,14 +3,18 @@
 .Cart {
   position: absolute;
   bottom: 0;
-  right: calc(-50% - 8px);
+  right: calc(-70% - 8px);
   z-index: 1;
   height: 100%;
-  width: 30%;
+  width: 70%;
   background: white;
   color: black;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   transition: right 1s ease;
+
+  @include from($md) {
+    width: 40%;
+  }
 
   .title {
     margin: 0 0 8px 0;
@@ -21,7 +25,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto-fit, 100px);
     overflow-y: auto;
-    height: calc(100% - 160.66px);
+    height: calc(100% - 171px);
     padding: 8px;
   }
 
@@ -29,7 +33,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100% - 160.66px);
+    height: calc(100% - 171px);
   }
 }
 

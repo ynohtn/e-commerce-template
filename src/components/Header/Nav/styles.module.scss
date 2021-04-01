@@ -1,0 +1,108 @@
+@import 'config.scss';
+
+.Nav {
+  display: flex;
+
+  @include from($md) {
+    display: block;
+  }
+
+  .burger {
+    position: relative;
+    z-index: 999;
+
+    @include from($md) {
+      display: none;
+    }
+
+    .icon {
+      width: 28px;
+      height: 28px;
+      position: relative;
+      transform: rotate(0deg);
+      transition: all 0.5s ease-in-out;
+      cursor: pointer;
+
+      span {
+        display: block;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background: black;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: all 0.5s ease-in-out;
+      }
+    }
+
+    .icon span:nth-child(1) {
+      top: 0px;
+    }
+
+    .icon span:nth-child(2),
+    .icon span:nth-child(3) {
+      top: 8px;
+    }
+
+    .icon span:nth-child(4) {
+      top: 16px;
+    }
+
+    .icon.open span:nth-child(1) {
+      top: 0px;
+      width: 0%;
+      left: 50%;
+    }
+
+    .icon.open span:nth-child(2) {
+      transform: rotate(45deg);
+    }
+
+    .icon.open span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+
+    .icon.open span:nth-child(4) {
+      top: 16px;
+      width: 0%;
+      left: 50%;
+    }
+  }
+
+  .desktopNav {
+    display: none;
+
+    @include from($md) {
+      display: block;
+    }
+
+    > ul {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 16px;
+    }
+  }
+
+  .mobileNav {
+    position: absolute;
+    top: 0;
+    left: -70%;
+    height: 100vh;
+    width: 70%;
+    background: white;
+    border-right: 16px solid black;
+    transition: left 1s ease;
+
+    &.isOpen {
+      left: 0;
+    }
+
+    .items {
+      margin-top: 115px;
+      padding: 16px;
+    }
+  }
+}
