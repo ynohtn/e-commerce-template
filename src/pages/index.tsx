@@ -1,11 +1,15 @@
 import { GetStaticProps } from "next";
 import { Client } from "prismic";
+import React from "react";
+import SliceZone from "~/components/SliceZone";
 
 export default function Home({ doc }) {
   console.log(doc)
+  const slices = doc.data.body;
   return (
     <div className="page">
       Home
+      <SliceZone slices={slices} />
     </div>
   );
 }
