@@ -1,0 +1,8 @@
+{
+  "apiEndpoint": "https://ecommerce-template-repo.cdn.prismic.io/api/v2",
+  "libraries": [
+    "@/slices",
+    "essential-slices"
+  ],
+  "_latest": "0.0.45"
+}
