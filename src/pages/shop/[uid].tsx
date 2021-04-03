@@ -1,10 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { Client } from '../../prismic'
-
-import resolver from '../../sm-resolver.js'
+import { Client } from '../../../prismic'
 
 const ShopByUid = (props) => {
-  console.log(props)
+  // console.log(props)
 
   return (
     <div className="page">
