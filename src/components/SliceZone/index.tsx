@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import css from './styles.module.scss';
 import TextSlice from './TextSlice'
+import Hero from './Hero'
 
 const cx = classNames.bind(css);
 
@@ -13,8 +14,8 @@ const SliceZone = ({ className, slices }: SliceZoneProps) => {
   return <div className={cx(className, css.SliceZone)}>
     {slices.map((slice, index) => {
       switch (slice.slice_type) {
-        // case 'hero':
-        //   return <Hero slice={slice} key={index} />;
+        case 'hero':
+          return <Hero slice={slice} key={index} />;
         case 'text':
           return <TextSlice slice={slice} key={index} />;
         default:

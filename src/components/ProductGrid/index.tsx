@@ -7,7 +7,7 @@ const cx = classNames.bind(css);
 
 export interface ProductGridProps {
   className?: string;
-  products: ProductType[];
+  products: ProductType[] | any;
 }
 
 const ProductGrid: FC<ProductGridProps> = ({ className, products }) => {
