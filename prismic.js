@@ -1,9 +1,5 @@
-/** Example file */
-
 import Prismic from 'prismic-javascript';
 import Link from 'next/link';
-
-import smConfig from './sm.json';
 
 export const apiEndpoint =
   'https://ecommerce-template-repo.cdn.prismic.io/api/v2';
