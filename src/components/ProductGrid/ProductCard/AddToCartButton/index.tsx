@@ -9,7 +9,7 @@ const cx = classNames.bind(css);
 
 export interface AddToCartButtonProps {
   className?: string;
-  product: ProductType | any;
+  product: ProductType;
 }
 
 function AddToCartButton({ className, product }: AddToCartButtonProps) {
