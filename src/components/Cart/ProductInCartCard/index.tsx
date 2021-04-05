@@ -1,29 +1,23 @@
-import { FC, memo } from 'react';
+import { memo } from 'react';
 import classNames from 'classnames/bind';
 import { ProductInCart } from '~/contexts/cartContext';
 import css from './styles.module.scss';
-import { formatPrice } from '~/utils';
+import { formatPrice } from '~/lib';
 import QuantityManager from '../QuantityManager';
 const cx = classNames.bind(css);
 
 export interface ProductInCartCardProps {
   className?: string;
   product: ProductInCart;
-  fromProductGrid?: boolean;
 }
 
-const ProductInCartCard: FC<ProductInCartCardProps> = ({
-  className,
-  product
-}) => {
-  const displayProductTotalPrice = (price: number, quantity: number) => {
-    return formatPrice(price * quantity);
-  };
-
+const ProductInCartCard = ({ className, product }: ProductInCartCardProps) => {
+  const displayProductTotalPrice = (price: number, quantity: number) => formatPrice(price * quantity);
+  const [image] = product.images;
   return (
     <li className={cx(className, css.ProductInCartCard)}>
       <figure className={css.miniature}>
-        <img src={product.image} alt="" />
+        <img src={image.url} alt={image.alt} />
       </figure>
       <div className={css.content}>
         <div>

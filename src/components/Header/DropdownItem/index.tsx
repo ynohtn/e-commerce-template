@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import classNames from 'classnames/bind';
 import css from './styles.module.scss';
-import { DropdownItemType } from '~/data';
+import { DropdownItemType } from '~/lib/interfaces';
 
 const cx = classNames.bind(css);
 

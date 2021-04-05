@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import classNames from 'classnames/bind';
-import { ProductType } from '~/data';
+import { ImageType, ProductType } from '~/lib/interfaces';
 import css from './styles.module.scss';
 import AddToCartButton from './AddToCartButton';
 import { RichText } from 'prismic-reactjs';
@@ -8,11 +8,11 @@ const cx = classNames.bind(css);
 
 export interface ProductCardProps {
   className?: string;
-  product: ProductType | any;
+  product: ProductType;
 }
 
 const ProductCard = ({ className, product }: ProductCardProps) => {
-  const image = product.images.find(image => image);
+  const [image] = product.images;
   return (
     <li className={cx(className, css.ProductCard)}>
       <figure className={css.image}>

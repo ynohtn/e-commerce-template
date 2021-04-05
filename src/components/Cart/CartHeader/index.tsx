@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import classNames from 'classnames/bind';
 import css from './styles.module.scss';
 import CartContext from '~/contexts/cartContext';
-import { itemsInCart } from '~/utils';
+import { itemsInCart } from '~/lib';
 import CartToggler from '~/components/CartToggler';
 
 const cx = classNames.bind(css);
