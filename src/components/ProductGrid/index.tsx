@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import classNames from 'classnames/bind';
 import { ProductType } from '~/data';
 import css from './styles.module.scss';
@@ -10,7 +9,7 @@ export interface ProductGridProps {
   products: ProductType[] | any;
 }
 
-const ProductGrid: FC<ProductGridProps> = ({ className, products }) => {
+const ProductGrid = ({ className, products }: ProductGridProps) => {
   return (
     <div className={cx(className, css.ProductGrid)}>
       <h1 className={cx(className, css.title)}>

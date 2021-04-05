@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import Image from 'next/image';
 import classNames from 'classnames/bind';
 import { ProductType } from '~/data';
@@ -13,19 +12,19 @@ export interface ProductCardProps {
 }
 
 const ProductCard = ({ className, product }: ProductCardProps) => {
-  const productImage = product.data.images.find(data => data)
+  const image = product.images.find(image => image);
   return (
     <li className={cx(className, css.ProductCard)}>
       <figure className={css.image}>
         <Image
-          src={productImage.image.url}
-          alt={productImage.image.alt}
+          src={image.url}
+          alt={image.alt}
           layout='fill'
         />
       </figure>
       <div className={css.footer}>
-        <h2>{RichText.asText(product.data.name)}</h2>
-        <h3>{RichText.asText(product.data.price)} €</h3>
+        <h2>{product.name}</h2>
+        <h3>{product.price} €</h3>
         <AddToCartButton product={product} />
       </div>
     </li>
