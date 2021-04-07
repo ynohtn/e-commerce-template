@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import css from './styles.module.scss';
 import TextSlice from './TextSlice'
 import Hero from './Hero'
+import BannerSlice from './BannerSlice';
 
 const cx = classNames.bind(css);
 
@@ -18,6 +19,8 @@ const SliceZone = ({ className, slices }: SliceZoneProps) => {
           return <Hero slice={slice} key={index} />;
         case 'text':
           return <TextSlice slice={slice} key={index} />;
+        case 'banner_with_caption':
+          return <BannerSlice slice={slice} key={index} />;
         default:
           return null;
       }

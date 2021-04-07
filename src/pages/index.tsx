@@ -3,7 +3,7 @@ import { Client } from "prismic";
 import SliceZone from "~/components/SliceZone";
 
 export default function Home({ doc }) {
-  // console.log(doc)
+  console.log(doc)
   const slices = doc.data.body;
   return (
     <div className="page">

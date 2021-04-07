@@ -1,0 +1,46 @@
+@import 'config.scss';
+
+.BannerSlice {
+  height: 50vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  padding: 16px;
+
+  @include from($md) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+  }
+
+  .caption {
+    position: relative;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    align-self: center;
+    padding: 16px;
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 32px;
+    }
+
+    p {
+      margin-bottom: 32px;
+    }
+
+    button {
+      background: white;
+      color: black;
+      border: 2px solid black;
+      font-size: 32px;
+      padding: 16px;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+  }
+}

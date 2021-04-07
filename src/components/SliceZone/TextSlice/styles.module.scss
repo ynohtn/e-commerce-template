@@ -1,6 +1,11 @@
 @import 'config.scss';
 
 .TextSlice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh;
   padding: 64px;
   border-bottom: 1px solid black;
 
