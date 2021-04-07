@@ -3,7 +3,7 @@ module.exports = {
     includePaths: ['src/styles']
   },
   images: {
-    domains: ['localhost']
+    domains: ['localhost', 'images.prismic.io']
   },
   i18n: {
     locales: ['fr', 'en'],

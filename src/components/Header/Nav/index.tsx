@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { useWindowSize } from 'react-use';
-import { DropdownType, nav } from '~/data';
+import { DropdownType } from '~/lib/interfaces';
 import css from './styles.module.scss';
 import Dropdown from '../Dropdown';
+import { nav } from '~/data';
 
 const cx = classNames.bind(css);
 
@@ -15,7 +16,6 @@ function Nav({ className }: NavProps) {
   const { width } = useWindowSize();
   const isMobile = (width <= 768);
   const [isOpen, setIsOpen] = useState(false);
-
 
   return (
     <div className={cx(className, css.Nav)}>

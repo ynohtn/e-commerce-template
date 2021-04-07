@@ -1,6 +1,6 @@
 import { Reducer } from 'react';
 import { CartContent } from '~/contexts/cartContext';
-import { ProductType } from '~/data';
+import { ProductType } from '~/lib/interfaces';
 import {
   addProduct,
   removeOneProduct,

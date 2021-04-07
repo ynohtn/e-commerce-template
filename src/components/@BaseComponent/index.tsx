@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames/bind';
 import css from './styles.module.scss';
 
@@ -8,7 +7,7 @@ export interface BaseComponentProps {
   className?: string;
 }
 
-function BaseComponent({ className }: BaseComponentProps) {
+const BaseComponent = ({ className }: BaseComponentProps) => {
   return <div className={cx(className, css.BaseComponent)}></div>;
 }
 

@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { ProductType } from '~/data';
+import { ImageType, ProductType } from '~/lib/interfaces';
 
 export interface CartContent {
   products: ProductInCart[];

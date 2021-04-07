@@ -1,0 +1,47 @@
+@import 'config.scss';
+
+.Hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  h1 {
+    font-size: 136px;
+    line-height: 142px;
+    font-weight: bold;
+    color: white;
+  }
+
+  h3 {
+    font-size: 100px;
+    line-height: 120px;
+    color: white;
+    margin-bottom: 10%;
+  }
+
+  button {
+    background: white;
+    color: black;
+    border: 2px solid black;
+    font-size: 32px;
+    padding: 16px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+}

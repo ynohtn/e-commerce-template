@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import classNames from 'classnames/bind';
 import css from './styles.module.scss';
-import { ProductType } from '~/data';
+import { ProductType } from '~/lib/interfaces';
 import CartContext from '~/contexts/cartContext';
 import { ActionType } from '~/reducers/cartReducer';
 

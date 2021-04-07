@@ -1,7 +1,7 @@
 import { memo, useState } from 'react';
 import classNames from 'classnames/bind';
 import css from './styles.module.scss';
-import { DropdownItemType, DropdownType } from '~/data';
+import { DropdownItemType, DropdownType } from '~/lib/interfaces';
 import DropDownItem from '../DropdownItem';
 
 const cx = classNames.bind(css);

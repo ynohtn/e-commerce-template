@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import css from './styles.module.scss';
 import CartContext from '~/contexts/cartContext';
 import { ActionType } from '~/reducers/cartReducer';
-import { itemsInCart } from '~/utils';
+import { itemsInCart } from '~/lib';
 
 const cx = classNames.bind(css);
 

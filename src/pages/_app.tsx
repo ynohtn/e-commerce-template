@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }) {
       <Page>
         <Component {...pageProps} />
       </Page>
+      <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=ecommerce-template-repo"></script>
     </CartProvider>
   );
 }

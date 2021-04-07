@@ -1,5 +1,6 @@
 import { ProductInCart } from '~/contexts/cartContext';
 
+// HELPERS
 export const formatPrice = (value: number) =>
   new Intl.NumberFormat('fr-FR', {
     style: 'currency',
