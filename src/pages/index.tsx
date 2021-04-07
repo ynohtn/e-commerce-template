@@ -1,6 +1,5 @@
 import { GetStaticProps } from "next";
 import { Client } from "prismic";
-import React from "react";
 import SliceZone from "~/components/SliceZone";
 
 export default function Home({ doc }) {

@@ -10,6 +10,7 @@ export interface TextSliceProps {
 }
 
 const TextSlice = ({ className, slice }: TextSliceProps) => {
+  // console.log(slice)
   return (
     <div className={cx(className, css.TextSlice)}>
       {RichText.render(slice.primary.text)}

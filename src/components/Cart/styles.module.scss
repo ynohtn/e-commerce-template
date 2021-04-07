@@ -1,7 +1,7 @@
 @import 'config.scss';
 
 .Cart {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: calc(-70% - 8px);
   z-index: 1;

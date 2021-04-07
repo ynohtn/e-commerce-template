@@ -7,9 +7,9 @@ const Shop = ({ doc }) => {
   const products = doc.results
 
   return (
-    <div className="page">
+    <>
       <ProductGrid products={formatProducts(products)} />
-    </div>
+    </>
   );
 }
 

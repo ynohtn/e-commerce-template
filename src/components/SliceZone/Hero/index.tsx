@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import classNames from 'classnames/bind';
 import css from './styles.module.scss';
 import { RichText } from 'prismic-reactjs';
@@ -12,7 +13,7 @@ export interface HeroProps {
 
 const Hero = ({ className, slice }: HeroProps) => {
   const heroData = slice.items.find(data => data)
-  console.log(heroData)
+  console.log(slice)
   return (
     <div className={cx(className, css.Hero)}>
       <figure className={css.background}>
@@ -24,6 +25,11 @@ const Hero = ({ className, slice }: HeroProps) => {
       </figure>
       {RichText.render(heroData.title)}
       {RichText.render(heroData.subtitle)}
+      <button>
+        <Link href={`/${heroData.link.slug}`}>
+          <a>{RichText.asText(heroData.linktext)}</a>
+        </Link>
+      </button>
     </div>
   );
 }

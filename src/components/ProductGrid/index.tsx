@@ -15,7 +15,7 @@ const ProductGrid = ({ className, products }: ProductGridProps) => {
       <h1 className={cx(className, css.title)}>
         SHOP <span>({products.length})</span>
       </h1>
-      <div>
+      <div className={css.gridCtn}>
         <ul>
           {products.map((product) => (
             <ProductCard
