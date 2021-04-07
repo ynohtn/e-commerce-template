@@ -1,5 +1,21 @@
 @import 'config.scss';
 
 .TextSlice {
-  padding: 32px;
+  padding: 64px;
+  border-bottom: 1px solid black;
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  button {
+    background: white;
+    color: black;
+    border: 2px solid black;
+    font-size: 32px;
+    padding: 16px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 16px auto;
+  }
 }

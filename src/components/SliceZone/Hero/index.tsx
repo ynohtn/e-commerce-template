@@ -13,7 +13,6 @@ export interface HeroProps {
 
 const Hero = ({ className, slice }: HeroProps) => {
   const heroData = slice.items.find(data => data)
-  console.log(slice)
   return (
     <div className={cx(className, css.Hero)}>
       <figure className={css.background}>
@@ -25,11 +24,13 @@ const Hero = ({ className, slice }: HeroProps) => {
       </figure>
       {RichText.render(heroData.title)}
       {RichText.render(heroData.subtitle)}
-      <button>
-        <Link href={`/${heroData.link.slug}`}>
-          <a>{RichText.asText(heroData.linktext)}</a>
-        </Link>
-      </button>
+      {heroData.link &&
+        <button>
+          <Link href={`/${heroData.link.slug}`}>
+            <a>{RichText.asText(heroData.linktext)}</a>
+          </Link>
+        </button>
+      }
     </div>
   );
 }
