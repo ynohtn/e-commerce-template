@@ -1,14 +1,15 @@
 import Image from 'next/image';
 import classNames from 'classnames/bind';
-import { ImageType, ProductType } from '~/lib/interfaces';
+import { ProductType } from '~/lib/interfaces';
 import css from './styles.module.scss';
 import AddToCartButton from './AddToCartButton';
-import { RichText } from 'prismic-reactjs';
+import { ReactNode } from 'react';
 const cx = classNames.bind(css);
 
 export interface ProductCardProps {
   className?: string;
   product: ProductType;
+  ref?: ReactNode
 }
 
 const ProductCard = ({ className, product }: ProductCardProps) => {

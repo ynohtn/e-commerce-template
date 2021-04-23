@@ -1,14 +1,12 @@
 import { GetStaticProps } from 'next';
 import ProductGrid from '~/components/ProductGrid';
 import { getAllProducts } from '~/lib/api';
-import { formatProducts } from '~/lib/serializer';
+import { formatProduct } from '~/lib/serializer';
 
-const Shop = ({ doc }) => {
-  const products = doc.results
-
+const Shop = ({ products }) => {
   return (
     <>
-      <ProductGrid products={formatProducts(products)} />
+      <ProductGrid products={products} />
     </>
   );
 }
@@ -18,7 +16,7 @@ export const getStaticProps: GetStaticProps = async ({ preview = null, previewDa
   const doc = await getAllProducts();
   return {
     props: {
-      doc,
+      products: doc.results.map((product) => formatProduct(product)),
       preview
     },
     revalidate: 1
