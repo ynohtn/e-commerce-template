@@ -10,3 +10,12 @@ export const getAllProducts = async () => {
 
   return products;
 };
+
+// GET FEATURED PRODUCTS
+export const getFeaturedProducts = async () => {
+  const products = await Client().query(
+    Prismic.Predicates.at('document.tags', ['featured'])
+  );
+
+  return products;
+};

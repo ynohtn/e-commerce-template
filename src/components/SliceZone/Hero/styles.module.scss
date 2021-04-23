@@ -22,26 +22,35 @@
   }
 
   h1 {
-    font-size: 136px;
-    line-height: 142px;
     font-weight: bold;
     color: white;
+
+    @include from($xl) {
+      font-size: 136px;
+      line-height: 142px;
+    }
   }
 
   h3 {
-    font-size: 100px;
-    line-height: 120px;
     color: white;
     margin-bottom: 10%;
+
+    @include from($xl) {
+      font-size: 100px;
+      line-height: 120px;
+    }
   }
 
   button {
     background: white;
     color: black;
     border: 2px solid black;
-    font-size: 32px;
     padding: 16px;
     border-radius: 2px;
     cursor: pointer;
+
+    @include from($xl) {
+      font-size: 32px;
+    }
   }
 }

@@ -13,7 +13,6 @@ export interface BannerSliceProps {
 
 const BannerSlice = ({ className, slice }: BannerSliceProps) => {
   const BannerSliceData = slice.primary
-  console.log(slice)
   return (
     <div className={cx(className, css.BannerSlice)}>
       <figure className={css.caption}>
